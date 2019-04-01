@@ -32,7 +32,15 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        \Log::info(print_r($request->all(), true));
+
+        return Contact::create([
+            'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
+            'email' => $request->email
+        ]);
+
+        //return Contact::create($request->all());   moze i ovako
     }
 
     /**
