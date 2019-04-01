@@ -71,7 +71,17 @@ class ContactController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $contact = Contact::findOrFail($id);
+
+        $contact->update($request->all());
+
+        return $contact;
+
+        // return $contact->update([
+        //     'first_name' => $request->first_name,
+        //     'last_name' => $request->last_name,
+        //     'email' => $request->email
+        // ]) a moze i ovako
     }
 
     /**
