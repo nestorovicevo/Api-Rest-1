@@ -71,6 +71,8 @@ class ContactController extends Controller
      */
     public function update(Request $request, $id)
     {
+        \Log::info(print_r($request->all(), true));
+
         $contact = Contact::findOrFail($id);
 
         $contact->update($request->all());
@@ -92,6 +94,6 @@ class ContactController extends Controller
      */
     public function destroy($id)
     {
-        //
+        return Contact::destroy($id);
     }
 }
