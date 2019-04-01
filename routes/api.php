@@ -19,6 +19,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('contacts', 'ContactController@index');
 Route::post('contacts', 'ContactController@store');
+Route::get('contacts/{id}', 'ContactController@show');
+
 
 
 // Route::resource('contacts', 'ContactController'); ovo je ako zelimo sve metode iz ovog kontrolera, a posto zelimo samo jednu, bolje je ovo gore
