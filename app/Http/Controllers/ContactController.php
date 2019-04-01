@@ -39,7 +39,7 @@ class ContactController extends Controller
             'last_name' => $request->last_name,
             'email' => $request->email
         ]);
-
+ 
         //return Contact::create($request->all());   moze i ovako
     }
 
