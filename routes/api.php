@@ -22,8 +22,20 @@ Route::post('contacts', 'ContactController@store');
 Route::get('contacts/{id}', 'ContactController@show');
 Route::put('contacts/{contact}', 'ContactController@update');
 Route::delete('contacts/{id}', 'ContactController@destroy');
+///////////////////////////////////////////////////////////////////////////////////
+Route::group([
 
+    'middleware' => 'api',
+    'prefix' => 'auth'
 
+], function ($router) {
+
+    Route::post('login', 'AuthController@login');
+    Route::post('logout', 'AuthController@logout');
+    Route::post('refresh', 'AuthController@refresh');
+    Route::post('me', 'AuthController@me');
+
+});
 
 
 

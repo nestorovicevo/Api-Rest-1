@@ -25,7 +25,7 @@ return [
     |
     */
 
-    'secret' => env('JWT_SECRET'),
+    'secret' => env('JWT_SECRET'),    ////ne ide na git, sluzi nam za potipisivanje tokena
 
     /*
     |--------------------------------------------------------------------------
@@ -101,7 +101,7 @@ return [
     |
     */
 
-    'ttl' => env('JWT_TTL', 60),
+    'ttl' => env('JWT_TTL', 60),    ///ovo je zivot tokena, u ovom slucaju mu je rok trajanja 60min
 
     /*
     |--------------------------------------------------------------------------
