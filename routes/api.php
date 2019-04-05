@@ -17,11 +17,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('contacts', 'ContactController@index');
-Route::post('contacts', 'ContactController@store');
-Route::get('contacts/{id}', 'ContactController@show');
-Route::put('contacts/{contact}', 'ContactController@update');
-Route::delete('contacts/{id}', 'ContactController@destroy');
+Route::get('contacts', 'ContactController@index')->middleware('auth:api'); ////ovo smo uradili da bi samo ulogovan korisnik mogao da vidi kontakte
+Route::post('contacts', 'ContactController@store')->middleware('auth:api');
+Route::get('contacts/{id}', 'ContactController@show')->middleware('auth:api');
+Route::put('contacts/{contact}', 'ContactController@update')->middleware('auth:api');
+Route::delete('contacts/{id}', 'ContactController@destroy')->middleware('auth:api');
 ///////////////////////////////////////////////////////////////////////////////////
 Route::group([
 
